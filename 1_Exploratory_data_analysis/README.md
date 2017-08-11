@@ -34,4 +34,30 @@ Exploratory data analysis
             - First argument is the name of the `.dct` file and the second one is the name of `.dat.gz` file
             - This function returns a `DataFrame` object
     - `DataFrame` objects
-        - 
+        - Fundamental data structure provided by pandas
+        - Row for a record, column for a variable
+        - Also contains the variable names and their types, also provides the methods for accessing and modifying the data
+        - The attribute `columns` returns a sequence of column names as Unicode strings
+            - e.g. `df.columns` => `Index([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])`
+            - The result is an `Index`, can be treated as list
+            - `df.columns[1]` => `'pregordr'`
+        - To access a column, use the column name as the key
+            - e.g. `df['pregordr']` => `...`
+            - The results is a `Series`, can be treated as a list
+            - `df['pregordr'][0]` => `1`
+        - Can also access the columns of a DataFrame using dot notation
+            - `pregorder = df.pregordr`
+            - Only works if the column name is a valid Python identifier
+    - Variables
+        - Columns and what they represent
+        - Some are from raw data and some are derived
+    - Transformation
+        - Data cleaning
+        - [`CleanFemPreg()`](https://github.com/amoghskulkarni/ThinkStats2/blob/master/code/nsfg.py#L56) function cleans the variables
+            - `df.agepreg /= 100.0` is dividing all the records in `agepreg` column by 100.0
+            - `replace()` method replaces special values
+                - `df.birthwgt_lb.replace(na_vals, np.nan, inplace=True)` where `na_vals = [97, 98, 99]`
+        - You can add a new column
+            - Correct way to add a column is `df['column_name'] = ...` and not `df.column_name = ...`
+    - Validation
+        
