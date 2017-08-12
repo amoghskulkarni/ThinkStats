@@ -30,3 +30,4 @@ Exploratory data analysis
         - The file is in the form of Stata dictionary file. Stata is a statistical software system. The file contains descriptions of 444 columns.
         - 
     - How to use utils/functions given in the code provided by the book [thinkstats2.py](https://github.com/amoghskulkarni/ThinkStats2/blob/master/code/thinkstats2.py)
+    
